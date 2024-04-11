@@ -3751,7 +3751,7 @@ body.cc-popup-no-scroll {
   display: block;
   position: relative;
   list-style: none;
-  padding: 15px 30px 15px 0;
+  padding: 15px 30px 5px 0;
   cursor: pointer;
   color: #111;
 }
@@ -3815,7 +3815,7 @@ body.cc-popup-no-scroll {
 .cc-accordion-item__title {
   font-weight: 500;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 @media (max-width: 767px) {
   .cc-accordion-item__title {
@@ -15200,8 +15200,8 @@ body {
   z-index: 999;
   position: fixed;
   height: 100vh;
-  padding-top: 20px;
   top: 0;
+  margin-top: 45px;
 }
 
 .custom-filter.active {
@@ -15246,10 +15246,15 @@ body {
     flex-direction: column;
   }
   .custom-filter .cc-product-filter {
-    height: 100vh;
+    height: 90vh;
     margin-top: 0px;
     padding: 20px;
-  
+    padding-top: 0;
+    padding-bottom: 60px;  
+  }
+  .mobile-filter .filter-form {
+    margin-top: 15%;
+    padding-bottom: 20px;
   }
   .filter-bar__wrapper {
       display: none;
@@ -15257,7 +15262,19 @@ body {
   .custom-filter {
       display: block;
   }
-  
+  .remove-btn {
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    z-index: 999;
+    background: #f5f5f5;
+    width: 27%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .remove-btn button {
+    width: 250px;
+  }
   .remove-filter {
     display: block;
   }
@@ -15276,6 +15293,9 @@ body {
   }
   .remove-filter button:hover svg {
     fill: #fff !important;
+  }
+  .remove-btn button:hover svg {
+     fill: #fff !important;
   }
   #page-content .custom-cart .content {
     padding-top: 40px;
@@ -15347,6 +15367,12 @@ body {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .mobile-filter .filter-form{
+    margin-top: 20%;
+  }
+  .remove-btn {
+    width: 25%;
+  }
   .theme-filter-container .cc-product-filter-container .product-list-container .product-list.product-list--rows .product-block{
     width: calc(33% - 1px);
   }
@@ -15390,12 +15416,21 @@ button#search_postcode {
   .custom-sort {
     display: none;
   }
-  
+  .mobile-filter .filter-form {
+    margin-top: 40%;
+  }
   .remove-filter button {
     width: 150px;
     padding: 6px;
   }
-  
+  .remove-btn button {
+    width: 160px;
+    padding: 6px;
+    font-size: 12px !important;
+  }
+  .remove-btn {
+    width: 25%;
+  }
   .theme-filter-container .cc-product-filter.cc-product-filter--sticky-true {
     position: sticky;
     overflow: auto;
@@ -15718,8 +15753,9 @@ button#search_postcode {
         padding: 0 10px;
         overflow: auto;
         box-shadow: unset;
-        height: 100vh !important;
+        height: 94vh !important;
         margin: 0;
+        padding-bottom: 60px;
   }
 
   .theme-filter-container .cc-product-filter.-in {
@@ -15730,7 +15766,7 @@ button#search_postcode {
   
   .cc-accordion-item__title {
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
   }
   .cc-product-filter .cc-accordion-item__title {
     font-size: 14px;
@@ -15760,9 +15796,22 @@ button#search_postcode {
 
 }
 @media(max-width:500px) {
-  
+  .remove-btn button {
+    font-size: 11px !important;
+  }
+
+  .remove-btn button svg {
+    width: 18px !important;
+  }
+  .remove-btn {
+    padding: 10px 0;
+    width: 45%;
+  }
+  .mobile-filter .filter-form {
+    margin-top: 30%;
+  }
   .custom-filter.active {
-    width: 50%;
+    width: 55%;
   }
   #page-content .custom-cart .content {
     padding-top: 30px;
@@ -15811,6 +15860,15 @@ button#search_postcode {
 
 }
 @media(max-width:320px) {
+  .remove-btn button {
+    font-size: 11px !important;
+    width: 120px;
+
+  }
+  .remove-btn {
+    width: 35%;
+    padding: 0;
+  }
   .product-block__inner .caption .product-region {
     position: absolute;
     top: -25px;
@@ -15846,7 +15904,8 @@ button#search_postcode {
   }
   .theme-filter-container .cc-product-filter {
     margin: 0 5px;
-    padding: 70px 10px 10px;
+    padding: 10px 10px 60px 10px;
+    
   }
     
   .pretty-select .text .label {
@@ -15861,7 +15920,7 @@ button#search_postcode {
   }
   .cc-checkbox__label::after {
     top: 7px;
-    left: -30px;
+    left: -20px;
   }
   .theme-filter-container .active-filter-controls {
     white-space: unset;
