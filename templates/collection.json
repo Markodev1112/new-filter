@@ -16,7 +16,7 @@
         "show_alternative_pricing_over_price": true,
         "show_filter_counts": false,
         "show_filter_deadends": true,
-        "ajax_products": false,
+        "ajax_products": true,
         "filter_mode": "sidebar",
         "sticky_sidebar": false,
         "collapse_filters_method": "none",

@@ -7272,7 +7272,9 @@ function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Obj
 
         // number of pallet and breaking
         let inputElement = document.querySelector('input[name="items[0]quantity"]')
-        inputElement.value= $pallet_val;
+        if ($pallet_val) {
+          inputElement.value= $pallet_val;
+        }
         let input_breaking = document.querySelector('input[name="items[1]quantity"]')
 
         if ($remainder == 0) {
@@ -7283,7 +7285,9 @@ function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Obj
         } else {
           breaking.removeClass('remove');
           $breaking_price = $('.price-pallet').find('.pallet-value:last').data('pallet-2'); 
-          input_breaking.value = 1;
+          if ($pallet_val) {
+            input_breaking.value = 1;
+          }
         }
 
         // pallet
@@ -7340,7 +7344,9 @@ function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Obj
 
         // number of pallet and breaking
         let inputElement = document.querySelector('input[name="items[0]quantity"]')
-        inputElement.value= $pallet_val;
+        if ($pallet_val) {
+          inputElement.value= $pallet_val;
+        }
         let input_breaking = document.querySelector('input[name="items[1]quantity"]')
 
         if ($remainder == 0) {
@@ -7351,7 +7357,9 @@ function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Obj
         } else {
           breaking.removeClass('remove');
           $breaking_price = $('.price-pallet').find('.pallet-value:last').data('pallet-2'); 
-          input_breaking.value = 1;
+          if ($pallet_val) {
+            input_breaking.value = 1;
+          }
         }
 
         // pallet

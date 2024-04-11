@@ -113,6 +113,12 @@
                   {% render 'social-icons', icon_setting: settings.social_custom_icon, icon_size: icon_size %}
                 </div>
               {% endif %}
+              {%- if block.settings.ecommerce_logo -%}
+                <div class="ecommerce_logo">
+                    <a id="celink18" href="http://www.ehandelscertifiering.se/">certifierad ehandel</a>
+                    <script src="https://www.ehandelscertifiering.se/lv6/bootstrap.php?url=www.stengrossen.se&amp;size=80px&amp;lang=sv&amp;autolang=off&amp;grayscale=&amp;opacity=&amp;shadow=&amp;nr=18" defer="defer"></script>
+                </div>
+              {%- endif -%}
             </div>
           {% endif %}
 
@@ -317,6 +323,12 @@
             "label": "Show social media links",
             "default": false,
             "info": "Add your social media links in Theme Settings > Social media"
+          },
+          {
+            "type": "checkbox",
+            "id": "ecommerce_logo",
+            "label": "E-commerce logo",
+            "default": true
           },
           {
             "type": "paragraph",

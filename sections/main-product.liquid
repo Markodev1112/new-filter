@@ -358,7 +358,17 @@
                         assign heading_tag = "h1"
                       endif
                     -%}
-                    
+                    {%- if block.settings.ecommerce_logo != blank -%}
+                      <div class="ecommerce_logo">
+                        <img 
+                              srcset="
+                                        {%- if block.settings.ecommerce_logo.width >= 375 -%}{{ block.settings.ecommerce_logo | image_url: width: 250 }} 375w,{%- endif -%}
+                                        {%- if block.settings.ecommerce_logo.width >= 750 -%}{{ block.settings.ecommerce_logo | image_url: width: 350 }} 750w,{%- endif -%}
+                                        {{ block.settings.ecommerce_logo | image_url }} {{block.settings.ecommerce_logo.width }}w
+                                      "
+                              class="lazyload fade-in lazyload" loading="lazy" data-src="{{ block.settings.ecommerce_logo | img_url: medium }}" alt="ecommerce logo" />
+                      </div>
+                    {%- endif -%}
                     <div class="product-size-logo">
                       <div class="product-title">
                         <{{ heading_tag }} class="product-area__details__title product-detail__gap-sm h2" {{ block.shopify_attributes }}>
@@ -370,6 +380,7 @@
                         <img src="{{ product.metafields.custom.logo_product | img_url: medium }}" alt="region-image">
                       {% endif %} 
                     </div>
+
                   {% endif %} 
 
                 {%- when 'price' -%}
@@ -1072,6 +1083,11 @@
             "label": "Set as primary page heading",
             "info": "Uses <h1> tag. One per page recommended. [Learn more](https://cleancanvas.co.uk/support/showcase/seo#inner-anchor-0)",
             "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "ecommerce_logo",
+            "label": "E-commerce logo"
           }
         ]
       },

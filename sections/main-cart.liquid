@@ -30,9 +30,17 @@
 </style>
 <div class="custom-cart" style="background-color: {{section.settings.cart_backbg}};">
 <div class="py-medium content custom-page" data-section-type="cart-template" >
-  {% if section.settings.cart_show_title %}
-  <h1 data-cc-animate class="h2">{{ 'cart.general.title' | t }}</h1>
-  {% endif %}
+  <div class="cart-header">
+    {% if section.settings.cart_show_title %}
+    <h1 data-cc-animate class="h2">{{ 'cart.general.title' | t }}</h1>
+    {% endif %}
+    {%- if section.settings.ecommerce_logo -%}
+      <div class="ecommerce_logo">
+          <a id="celink18" href="http://www.ehandelscertifiering.se/">certifierad ehandel</a>
+          <script src="https://www.ehandelscertifiering.se/lv6/bootstrap.php?url=www.stengrossen.se&amp;size=80px&amp;lang=sv&amp;autolang=off&amp;grayscale=&amp;opacity=&amp;shadow=&amp;nr=18" defer="defer"></script>
+      </div>
+    {%- endif -%}
+  </div>
 
   {% if cart.item_count > 0 %}
   <form action="{{ routes.cart_url }}" method="post" id="cartform" data-cc-animate>
@@ -570,6 +578,12 @@
   {
     "name": "Cart page",
     "settings": [
+      {
+        "type": "checkbox",
+        "id": "ecommerce_logo",
+        "label": "E-commerce logo",
+        "default": true
+      },
       {
         "type": "checkbox",
         "id": "cart_show_title",
